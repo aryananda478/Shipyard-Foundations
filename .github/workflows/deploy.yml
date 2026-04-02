@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
 
       # Step 2: Deploy your Task-3 folder to GitHub Pages
-      - uses: peaceiris/actions-gh-pages@v6
+      - uses: peaceiris/actions-gh-pages@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./aryananda.ps@mulearn/Task-3  
