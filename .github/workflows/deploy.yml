@@ -1,5 +1,8 @@
 name: Deploy to GitHub Pages
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches:
@@ -25,10 +28,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4   # <-- updated from v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: ./aryananda.ps/Task-3        # <-- your folder path
+          path: ./<your-muid>/Task-3
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5          # <-- updated from v4
+        uses: actions/deploy-pages@v5
