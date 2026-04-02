@@ -1,37 +1,19 @@
-name: Deploy to GitHub Pages
-
-# Force Node.js 24 to avoid deprecated Node 20 warnings
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+name: Deploy Task-3 Website
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout code
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # Step 1: Checkout your repo
+      - uses: actions/checkout@v3
 
-      # Step 2: Setup Pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      # Step 3: Upload your Task-3 folder as artifact
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+      # Step 2: Deploy your Task-3 folder to GitHub Pages
+      - uses: peaceiris/actions-gh-pages@v6
         with:
-          path: ./<your-muid>/Task-3   # <-- R…
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./aryananda.ps@mulearn/Task-3  
