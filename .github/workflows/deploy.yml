@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./<your-muid>/Task-3
+          path: ./aryananda.ps@mulearn/Task-3
 
       - name: Deploy to GitHub Pages
         id: deployment
