@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 
+# Force Node.js 24 to avoid deprecated Node 20 warnings
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -21,17 +22,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # Step 3: Upload your Task-3 folder as artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./aryananda.ps@mulearn/Task-3
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+          path: ./<your-muid>/Task-3   # <-- R…
