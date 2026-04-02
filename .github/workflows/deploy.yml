@@ -27,7 +27,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4   # <-- updated from v3
         with:
-          path: ./<your-muid>/Task-3        # <-- your folder path
+          path: ./aryananda.ps@mulearn/Task-3        # <-- your folder path
 
       - name: Deploy to GitHub Pages
         id: deployment
