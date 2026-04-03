@@ -1,4 +1,4 @@
-name: Deploy Task-3 Website
+name: Deploy Website
 
 on:
   push:
@@ -8,12 +8,13 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      # Step 1: Checkout your repo
-      - uses: actions/checkout@v3
 
-      # Step 2: Deploy your Task-3 folder to GitHub Pages
-      - uses: peaceiris/actions-gh-pages@v5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./aryananda.ps@mulearn/Task-3  
+          publish_dir: ./aryananda.ps@mulearn/Task-3
